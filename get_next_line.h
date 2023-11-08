@@ -6,7 +6,7 @@
 /*   By: rvandepu <rvandepu@student.42lehavre.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/25 18:10:02 by rvandepu          #+#    #+#             */
-/*   Updated: 2023/11/07 09:25:30 by rvandepu         ###   ########.fr       */
+/*   Updated: 2023/11/08 01:43:25 by rvandepu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 # include <stdbool.h>
 # include <stdlib.h>
 # include <unistd.h>
+// TODO: remove stdio
+# include <stdio.h>
 
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 1024
@@ -36,6 +38,7 @@ char	*get_next_line(int fd);
 
 // get_next_line_utils.c
 void	*ft_memcpy(void *dest, const void *src, size_t n);
+void	ft_printmem(t_buf *mem); // TODO remove
 bool	ft_memclear(t_buf **mem);
 
 #endif
