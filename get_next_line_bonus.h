@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   get_next_line_bonus.h                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rvandepu <rvandepu@student.42lehavre.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/25 18:10:02 by rvandepu          #+#    #+#             */
-/*   Updated: 2023/11/08 02:38:57 by rvandepu         ###   ########.fr       */
+/*   Updated: 2023/11/08 02:54:15 by rvandepu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
+#ifndef GET_NEXT_LINE_BONUS_H
+# define GET_NEXT_LINE_BONUS_H
 
 # include <stdbool.h>
 # include <stdlib.h>
@@ -19,6 +19,10 @@
 
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 1024
+# endif
+
+# ifndef FD_MAX
+#  define FD_MAX 1024
 # endif
 
 typedef struct s_buf {

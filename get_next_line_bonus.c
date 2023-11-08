@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*   get_next_line_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rvandepu <rvandepu@student.42lehavre.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/25 18:09:29 by rvandepu          #+#    #+#             */
-/*   Updated: 2023/11/08 02:38:48 by rvandepu         ###   ########.fr       */
+/*   Updated: 2023/11/08 02:51:54 by rvandepu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
 bool	ft_read_to_mem(t_buf **mem, int fd)
 {
@@ -101,17 +101,17 @@ bool	ft_mem_next(t_buf **mem)
 
 char	*get_next_line(int fd)
 {
-	static t_buf	*mem = NULL;
+	static t_buf	*mem[FD_MAX] = {NULL};
 	char			*line;
 
 	if (fd < 0)
 		return (NULL);
-	while (!ft_mem_has_line(mem))
-		if (!ft_read_to_mem(&mem, fd))
+	while (!ft_mem_has_line(mem[fd]))
+		if (!ft_read_to_mem(&mem[fd], fd))
 			return (NULL);
-	if (!ft_get_line(&mem, &line))
+	if (!ft_get_line(&mem[fd], &line))
 		return (NULL);
-	if (!ft_mem_next(&mem))
+	if (!ft_mem_next(&mem[fd]))
 	{
 		free(line);
 		return (NULL);
